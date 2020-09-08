@@ -20,7 +20,7 @@ func NewHello(l *log.Logger) *Hello {
 
 }
 
-func (h *Hello) ServeHttp(rw http.ResponseWriter, r *http.Request) {
+func (h *Hello) ServeHTTP(rw http.ResponseWriter, r *http.Request) {
 	//l is log.Logger and l has Println method
 	h.l.Println("Hello World!")
 	d, err := ioutil.ReadAll(r.Body)
