@@ -13,4 +13,5 @@
 ## Episode 2
 
 - You don't want to directly create concrete objects inside a Handler. Because it impacts testability.
-- 
+- Graceful Shutdown. If we are doing something like a large file upload. Like a DB transaction. Then we decide that we want to shut the server down because I want to upgrade the version of it or something like that. If I don't do it gracefully, then I am risking disconnecting my client. They are not gonna finish what they are doing and it is going to cause an error on their side.
+- With the Go server we can use the ShutDown() function which will wait until the requests that are currently being handled are completed before it shuts down.
